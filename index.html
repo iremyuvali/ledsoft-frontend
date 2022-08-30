@@ -1,0 +1,102 @@
+<!-- main page -->
+
+
+<html>
+     <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="https://d1ujqdpfgkvqfi.cloudfront.net/favicon-generator/htdocs/favicons/2022-08-15/afd7dd43146353dbb380028c4560b720.ico.png">
+
+        <link rel="stylesheet" media="all" href="css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script 
+             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+             crossorigin="anonymous">
+        </script>
+        
+        <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"> </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+
+          <title> • main page • </title>
+     </head>
+     <body>
+          <center>
+
+            <form class="form-group col-sm-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin-top: 15px;">
+                <button class="btn btn-outline-success float-right" type="submit">Search</button>
+            </form>
+            <br><br><br>
+
+            <input name="get_location" type="submit" class="btn btn-outline-success my-2 my-sm-0" id="get_location" value="find my location" style="margin-right: 25px;">
+
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#collapselist" aria-expanded="false" aria-controls="collapselist" >
+                  list the stores
+            </button>
+
+              <div class="collapse" id="collapselist">
+                <div class="card card-body">
+                  <ul style="color: #fff;">
+                    <li> <a href="brandpage.html" target="_blank"> 1. </a></li>
+                    <li> <a href="brandpage.html" target="_blank"> 2. </a></li>
+                    <li> <a href="brandpage.html" target="_blank"> 3. </a></li>
+                    <li> <a href="brandpage.html" target="_blank"> 4. </a></li>
+                    <li> <a href="brandpage.html" target="_blank"> 5. </a></li>
+                  </ul>
+                </div>
+              </div>
+
+
+               <br><br>
+
+               <iframe id="google_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6350041.315275243!2d30.687734924247305!3d39.00148512328862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1659960414653!5m2!1str!2str" 
+               width="75%" height="85%" style="border:0; margin-bottom: 50px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               
+          </center>
+
+          <script>
+
+            var c = function(pos){
+                var lat = pos.coords.latitude,
+                    long = pos.coords.longitude,
+                    coords = lat + " , " + long;
+
+                
+                document.getElementById("google_map").setAttribute("src","https://www.google.com/maps/d/u/0/embed?mid=1p_dGkSTXQz4-Ni1X-5xAlJpXSjXJf4s&ehbc=2E312F&z=14")
+
+            }
+
+            document.getElementById("get_location").onclick=function(){
+
+                navigator.geolocation.getCurrentPosition(c);
+
+                return false;
+            }
+          </script>
+
+                 
+     </body>
+
+     <footer>
+        <center>
+            <small style="padding-bottom: 15px;">
+            &copy; Copyright
+              <script>new Date().getFullYear() > 2010 && document.write(" " + new Date().getFullYear());</script>
+              All Rights Reserved.
+            </small>
+        </center>
+        
+     </footer>
+</html>
